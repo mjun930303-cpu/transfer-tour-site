@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: mjun930303-cpu/transfer-tour-site
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "tour"
+    label: "투어 정보"
+    files:
+      - file: "data/tour.json"
+        label: "투어 내용"
+        name: "tour"
+        fields:
+          - { label: "투어 안내", name: "tourInfo", widget: "text" }
+          - label: "코스 목록"
+            name: "courses"
+            widget: "list"
+            fields:
+              - { label: "코스명", name: "title", widget: "string" }
+              - { label: "설명", name: "description", widget: "text" }
+              - { label: "이미지", name: "image", widget: "image" }
+              - { label: "예약 링크", name: "link", widget: "string" }
