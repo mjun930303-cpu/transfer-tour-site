@@ -84,19 +84,18 @@ function renderList(){
     badges.appendChild(buildBadge(`${course.time || ""} (${course.duration || ""})`));
     if(course.fee) badges.appendChild(buildBadge(course.fee));
 
-    const reserve = document.createElement("a");
-    reserve.className = "reserve-mini";
-    reserve.href = course.reserveLink || DATA.reserveLinkDefault || "#";
-    reserve.target = "_blank";
-    reserve.rel = "noopener";
-    reserve.textContent = "Reserve / More Info";
-
-    // Clicking the card opens detail (mobile-friendly)
-    card.addEventListener("click", (e) => {
-      // If user clicks reserve button, let it go out.
-      if(e.target && e.target.closest && e.target.closest("a")) return;
+    // More Info -> opens detail view (NOT external link)
+    const more = document.createElement("button");
+    more.className = "more-mini";
+    more.type = "button";
+    more.textContent = "More Info";
+    more.addEventListener("click", (e) => {
+      e.stopPropagation();
       openDetail(course.slug);
     });
+
+    // Clicking the card opens detail (mobile-friendly)
+    card.addEventListener("click", () => openDetail(course.slug));
     card.addEventListener("keypress", (e) => {
       if(e.key === "Enter") openDetail(course.slug);
     });
@@ -104,7 +103,7 @@ function renderList(){
     body.appendChild(title);
     body.appendChild(sub);
     body.appendChild(badges);
-    body.appendChild(reserve);
+    body.appendChild(more);
 
     card.appendChild(img);
     card.appendChild(body);
@@ -118,7 +117,6 @@ function openDetail(slug){
   const course = (DATA.courses || []).find(c => c.slug === slug);
   if(!course) return;
 
-  // Update URL hash for share/back
   location.hash = `course=${encodeURIComponent(slug)}`;
 
   els.dImg.src = course.image || "";
@@ -140,6 +138,7 @@ function openDetail(slug){
     els.dHighlights.appendChild(li);
   });
 
+  // Reserve button only here -> airport reservation page (same for all courses)
   els.dReserve.href = course.reserveLink || DATA.reserveLinkDefault || "#";
 
   els.listView.classList.add("hidden");
@@ -148,7 +147,6 @@ function openDetail(slug){
 }
 
 function closeDetail(){
-  // Clear hash
   if(location.hash.startsWith("#course=")) {
     history.pushState("", document.title, window.location.pathname + window.location.search);
   }
@@ -162,14 +160,12 @@ function handleHash(){
     const slug = decodeURIComponent(hash.replace("course=", ""));
     openDetail(slug);
   } else {
-    // No course selected
     els.detailView.classList.add("hidden");
     els.listView.classList.remove("hidden");
   }
 }
 
 function init(){
-  // Filter chips
   document.querySelectorAll(".chip").forEach(btn => {
     btn.addEventListener("click", () => setActiveChip(btn.dataset.terminal));
   });
@@ -201,7 +197,7 @@ function init(){
       `;
 
       renderList();
-      handleHash(); // open detail if hash exists
+      handleHash();
     })
     .catch(err => {
       console.error(err);
