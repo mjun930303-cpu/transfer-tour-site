@@ -12,29 +12,33 @@
       <h1 id="site-title">Free Korea Transit Tour</h1>
       <p id="site-subtitle" class="muted"></p>
     </div>
-
-    <div class="filters">
-      <button class="chip active" data-terminal="ALL">All</button>
-      <button class="chip" data-terminal="T1">T1</button>
-      <button class="chip" data-terminal="T2">T2</button>
-    </div>
   </header>
 
   <main class="container">
     <section class="panel" id="tour-info">
-      <h2>Transfer Tour Guide</h2>
+      <h2>Transit Tour Guide</h2>
       <ul id="tour-notes" class="bullets"></ul>
       <div class="contact" id="tour-contact"></div>
     </section>
 
     <!-- List view -->
     <section id="list-view">
-      <h2>Course Information</h2>
+      <div class="section-head">
+        <h2>Course Information</h2>
+
+        <!-- moved filters here -->
+        <div class="filters">
+          <button class="chip active" data-terminal="ALL">All</button>
+          <button class="chip" data-terminal="T1">T1</button>
+          <button class="chip" data-terminal="T2">T2</button>
+        </div>
+      </div>
+
       <div id="course-grid" class="grid"></div>
       <p id="empty-state" class="muted hidden">No courses match this filter.</p>
     </section>
 
-    <!-- Detail view (single-page navigation) -->
+    <!-- Detail view -->
     <section id="detail-view" class="hidden">
       <button id="back-btn" class="back">← Back to list</button>
 
@@ -49,8 +53,9 @@
           <h3>Highlights</h3>
           <ul id="detail-highlights" class="bullets"></ul>
 
+          <!-- reserve button only here -->
           <a id="detail-reserve" class="reserve" target="_blank" rel="noopener">
-            Reserve / More Info
+            Reserve
           </a>
         </div>
       </div>
