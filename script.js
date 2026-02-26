@@ -2,15 +2,18 @@ let DATA = null;
 let activeTerminal = "ALL";
 
 const els = {
-  title: document.getElementById("site-title"),
   subtitle: document.getElementById("site-subtitle"),
   notes: document.getElementById("tour-notes"),
   contact: document.getElementById("tour-contact"),
+  termsTitle: document.getElementById("terms-title"),
+  termsList: document.getElementById("terms-list"),
+
   grid: document.getElementById("course-grid"),
   empty: document.getElementById("empty-state"),
   listView: document.getElementById("list-view"),
   detailView: document.getElementById("detail-view"),
   backBtn: document.getElementById("back-btn"),
+
   dImg: document.getElementById("detail-image"),
   dTitle: document.getElementById("detail-title"),
   dSub: document.getElementById("detail-subtitle"),
@@ -82,9 +85,8 @@ function renderList(){
     badges.appendChild(buildBadge((course.days || []).join(" / ")));
     badges.appendChild(buildBadge((course.terminals || []).join(" & ")));
     badges.appendChild(buildBadge(`${course.time || ""} (${course.duration || ""})`));
-    if(course.fee) badges.appendChild(buildBadge(course.fee));
+    if(course.fee) badges.appendChild(buildBadge(course.fee)); // 유료만 표시
 
-    // More Info -> opens detail view (NOT external link)
     const more = document.createElement("button");
     more.className = "more-mini";
     more.type = "button";
@@ -94,7 +96,6 @@ function renderList(){
       openDetail(course.slug);
     });
 
-    // Clicking the card opens detail (mobile-friendly)
     card.addEventListener("click", () => openDetail(course.slug));
     card.addEventListener("keypress", (e) => {
       if(e.key === "Enter") openDetail(course.slug);
@@ -107,7 +108,6 @@ function renderList(){
 
     card.appendChild(img);
     card.appendChild(body);
-
     els.grid.appendChild(card);
   });
 }
@@ -134,11 +134,10 @@ function openDetail(slug){
   els.dHighlights.innerHTML = "";
   (course.highlights || []).forEach(h => {
     const li = document.createElement("li");
-    li.innerHTML = escapeHtml(h);
+    li.textContent = h;
     els.dHighlights.appendChild(li);
   });
 
-  // Reserve button only here -> airport reservation page (same for all courses)
   els.dReserve.href = course.reserveLink || DATA.reserveLinkDefault || "#";
 
   els.listView.classList.add("hidden");
@@ -173,12 +172,15 @@ function init(){
   els.backBtn.addEventListener("click", closeDetail);
   window.addEventListener("hashchange", handleHash);
 
-  fetch("/data/tour.json")
-    .then(res => res.json())
+  // ✅ 핵심: 상대경로로 로드 ("/data/..."가 아니라 "data/...")
+  fetch("data/tour.json")
+    .then(res => {
+      if(!res.ok) throw new Error(`HTTP ${res.status} loading data/tour.json`);
+      return res.json();
+    })
     .then(data => {
       DATA = data;
 
-      els.title.textContent = data.tourInfo?.title || "Free Korea Transit Tour";
       els.subtitle.textContent = data.tourInfo?.subtitle || "";
 
       els.notes.innerHTML = "";
@@ -196,12 +198,22 @@ function init(){
         <div>${phone ? `Tel: ${escapeHtml(phone)}` : ""}</div>
       `;
 
+      if(els.termsTitle) els.termsTitle.textContent = data.tourInfo?.termsTitle || "Terms & Conditions";
+      if(els.termsList){
+        els.termsList.innerHTML = "";
+        (data.tourInfo?.terms || []).forEach(t => {
+          const li = document.createElement("li");
+          li.textContent = t;
+          els.termsList.appendChild(li);
+        });
+      }
+
       renderList();
       handleHash();
     })
     .catch(err => {
       console.error(err);
-      els.grid.innerHTML = "<p class='muted'>Failed to load data/tour.json</p>";
+      els.grid.innerHTML = `<p class="muted">Failed to load data/tour.json</p>`;
     });
 }
 
