@@ -1,0 +1,11 @@
+{
+  "tourInfo": "환승객 대상 무료 투어 / 최소 환승시간 5시간 이상 필요",
+  "courses": [
+    {
+      "title": "서울 시티투어",
+      "description": "경복궁, 인사동 방문",
+      "image": "https://via.placeholder.com/300",
+      "link": "https://example.com"
+    }
+  ]
+}
