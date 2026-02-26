@@ -162,14 +162,19 @@ h3{margin:16px 0 8px; font-size:15px;}
     align-items:flex-start;
   }
 }
+.card{ height: 320px; }              /* 카드 높이 고정 */
+.card .body{ height: 160px; }        /* 내부도 고정 (이미지 160px + body 160px) */
 
-.filters{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:6px;
+.card .title{
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
 }
 
-.chip{
-  padding:9px 12px;
+.card .sub{
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow:hidden;
 }
