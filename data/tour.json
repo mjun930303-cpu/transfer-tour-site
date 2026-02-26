@@ -1,11 +1,71 @@
 {
-  "tourInfo": "환승객 대상 무료 투어 / 최소 환승시간 5시간 이상 필요",
+  "tourInfo": "Free Korea Transit Tour 안내(테스트)\n- 투어는 사전 공지 없이 변경될 수 있습니다.\n- 투어 참가 자격은 출입국(비자/입국요건)에 따라 달라질 수 있습니다.\n- 공항 도착~출발 사이 시간이 24시간 이내여야 참가 가능합니다.\n- 예약/등록 시 여권 및 도착/출발 탑승권이 필요합니다.\n- 투어는 선착순이며, 온라인 예약과 현장 등록이 함께 운영됩니다.\n\n문의: transferinfodesk@gmail.com / +82-32-741-3140, +82-32-741-0060",
   "courses": [
     {
-      "title": "서울 시티투어",
-      "description": "경복궁, 인사동 방문",
-      "image": "https://via.placeholder.com/300",
-      "link": "https://example.com"
+      "title": "DMZ & Aegibong: The Closest View to North Korea (Aegibong Peace Ecopark)",
+      "description": "월요일 / T1 & T2 / 09:00–13:00 (4h)\n- 북측 1.4km 거리에서 조망 가능한 평화생태공원\n- 전망 스타벅스, 현수교, 생태 트레일, 전망대",
+      "image": "/images/aegibong.jpg",
+      "link": "https://example.com/reserve-aegibong"
+    },
+    {
+      "title": "Trendy Hub of Youth (Hongdae Street)",
+      "description": "월·화·토·일 / T1 & T2 / 14:00–18:00 (4h)\n- 쇼핑/코스메틱/서점/스트리트푸드/레스토랑\n- 이색 카페(고양이/강아지/3D 카페 등), 패션/인디음악/아트",
+      "image": "/images/hongdae.jpg",
+      "link": "https://example.com/reserve-hongdae"
+    },
+    {
+      "title": "Petit Shopping Delight (Sinpo Traditional Market)",
+      "description": "매일 / T2 / 15:00–18:00 (3h)\n- 19세기 후반부터 이어진 전통시장\n- 대표 먹거리: 닭강정(달콤매콤 소스의 바삭한 치킨)",
+      "image": "/images/sinpo.jpg",
+      "link": "https://example.com/reserve-sinpo"
+    },
+    {
+      "title": "Find Your Fun at INSPIRE (INSPIRE Entertainment Resort)",
+      "description": "3h 코스 / 우천·강설 등 악천후 대체 코스\n- 150m LED 스트리트(Aurora), Rotunda(키네틱 샹들리에)\n- 외국인 전용 카지노, 미디어아트(Le Space), 몰 등",
+      "image": "/images/inspire.jpg",
+      "link": "https://example.com/reserve-inspire"
+    },
+    {
+      "title": "Green Lovers (Seoul Botanic Park)",
+      "description": "3h 코스 / 우천·강설 등 악천후 대체 코스\n- 전 세계 12개 도시 콘셉트 식물/원예 소개\n- 식물원+공원이 결합된 대규모 공간\n- 입장료 $4",
+      "image": "/images/botanicpark.jpg",
+      "link": "https://example.com/reserve-botanicpark"
+    },
+    {
+      "title": "Seaside Slurp & Chill (Wangsan Marina – Ramen Library CU)",
+      "description": "수·목·금 / T1 / 15:00–18:00 (3h)\n- 왕산마리나 요트 선착장 근처 CU 라면도서관\n- 다양한 라면/셀프 조리/야외 테라스 바다 뷰",
+      "image": "/images/wangsan-ramen.jpg",
+      "link": "https://example.com/reserve-wangsan"
+    },
+    {
+      "title": "DMZ Tour: 3rd Tunnel & Dora Observatory",
+      "description": "목요일 / T1 & T2 / 09:00–14:00 (5h)\n- 제3땅굴(급경사·좁은 통로로 운동 필요)\n- 도라산 전망대: 북한 지역(개성 등) 조망\n- 입장료 $4",
+      "image": "/images/dmz-3rd-tunnel.jpg",
+      "link": "https://example.com/reserve-dmz3"
+    },
+    {
+      "title": "Embracing Peace on Divided Land (Odusan Observatory → Imjingak)",
+      "description": "수·금 / T1 & T2 / 09:00–14:00 (5h)\n- 오두산 통일전망대 + 임진각 평화누리공원",
+      "image": "/images/odusan-imjingak.jpg",
+      "link": "https://example.com/reserve-odusan"
+    },
+    {
+      "title": "Royal Heritage and Charm (Gyeongbokgung → Insadong)",
+      "description": "매일 / T1 & T2 / 09:00–14:00 (5h)\n- 경복궁 + 인사동\n- 입장료 $3",
+      "image": "/images/gyeongbokgung-insadong.jpg",
+      "link": "https://example.com/reserve-royal"
+    },
+    {
+      "title": "Easy Outing in Incheon (Moraenae & Guwol Market → Sorae Port)",
+      "description": "월·화 / T1 & T2 / 10:00–15:00 (5h)\n- 모래내/구월 전통시장(스트리트푸드) + 소래포구(해산물/역사박물관)",
+      "image": "/images/incheon-markets-sorae.jpg",
+      "link": "https://example.com/reserve-easyouting"
+    },
+    {
+      "title": "Fun with the Seagulls (Gueup Ferry Terminal → Wolmi Park)",
+      "description": "화·토·일 / T1 & T2 / 09:00–13:00 (4h)\n- 구읍뱃터 페리(갈매기 먹이주기) + 월미공원",
+      "image": "/images/seagulls-wolmi.jpg",
+      "link": "https://example.com/reserve-seagulls"
     }
   ]
 }
