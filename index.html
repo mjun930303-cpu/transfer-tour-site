@@ -7,31 +7,26 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header class="container header">
     <div class="brand">
-      <img src="/images/logo.png" alt="Free Korea Transit Tour" class="logo" />
-      <p id="site-subtitle" class="muted"></p>
+      <img src="images/logo.png" alt="Free Korea Transit Tour" class="logo" />
+      <div id="site-subtitle" class="brand-subtitle muted"></div>
     </div>
   </header>
 
   <main class="container">
-
-    <!-- Transit Tour Guide -->
     <section class="panel" id="tour-info">
       <h2>Transit Tour Guide</h2>
       <ul id="tour-notes" class="bullets"></ul>
       <div class="contact" id="tour-contact"></div>
 
-      <h3 id="terms-title" style="margin-top:14px;">Terms & Conditions</h3>
+      <h3 id="terms-title" class="mt-14">Terms & Conditions</h3>
       <ul id="terms-list" class="bullets"></ul>
     </section>
 
-    <!-- Course list -->
     <section id="list-view">
       <div class="section-head">
         <h2>Course Information</h2>
-
         <div class="filters">
           <button class="chip active" data-terminal="ALL">All</button>
           <button class="chip" data-terminal="T1">T1</button>
@@ -43,7 +38,6 @@
       <p id="empty-state" class="muted hidden">No courses match this filter.</p>
     </section>
 
-    <!-- Detail view -->
     <section id="detail-view" class="hidden">
       <button id="back-btn" class="back">← Back to list</button>
 
@@ -58,18 +52,13 @@
           <h3>Highlights</h3>
           <ul id="detail-highlights" class="bullets"></ul>
 
-          <a id="detail-reserve" class="reserve" target="_blank" rel="noopener">
-            Reserve
-          </a>
+          <a id="detail-reserve" class="reserve" target="_blank" rel="noopener">Reserve</a>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="container footer muted">
-    Free Korea Transit Tour – Test Page
-  </footer>
+  <footer class="container footer muted">Free Korea Transit Tour – Test Page</footer>
 
   <script src="script.js"></script>
 </body>
