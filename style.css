@@ -5,9 +5,7 @@
   --bg:#fff;
   --card:#fafafa;
 }
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -16,30 +14,33 @@ body{
 }
 
 .container{max-width:980px;margin:0 auto;padding:16px;}
+.header{border-bottom:1px solid var(--border);padding-bottom:12px;}
 
-.header{
-  border-bottom:1px solid var(--border);
-  padding-bottom:12px;
-}
-
-/* 🔑 가로형 로고 대응 */
+/* ✅ 로고가 화면(컨테이너) 폭에 딱 맞게 */
 .brand{
   display:flex;
-  align-items:center;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
 }
 
 .logo{
-  max-height:56px;     /* 가로 로고 기준 */
-  width:auto;
-  max-width:100%;
+  width:100%;
+  height:auto;
+  max-height:84px;       /* 너무 커지는 것 방지 */
   object-fit:contain;
+  display:block;
 }
 
-/* 텍스트 */
+.brand-subtitle{
+  font-size:14px;
+  line-height:1.3;
+}
+
+/* 기본 */
 .muted{color:var(--muted)}
 .hidden{display:none}
 .mt-14{margin-top:14px;}
-
 h2{margin:18px 0 10px;font-size:18px;}
 h3{margin:16px 0 8px;font-size:15px;}
 
@@ -49,7 +50,6 @@ h3{margin:16px 0 8px;font-size:15px;}
   border-radius:14px;
   padding:14px;
 }
-
 .bullets{margin:8px 0 0;padding-left:18px;}
 .contact{margin-top:10px;font-size:14px;}
 
@@ -62,7 +62,6 @@ h3{margin:16px 0 8px;font-size:15px;}
 }
 
 .filters{display:flex;gap:10px;flex-wrap:wrap;}
-
 .chip{
   border:1px solid var(--border);
   background:#fff;
@@ -71,10 +70,8 @@ h3{margin:16px 0 8px;font-size:15px;}
   cursor:pointer;
   font-size:14px;
 }
-
 .chip.active{border-color:#111;}
 
-/* 🔑 카드 높이 고정 제거 → 내용에 맞게 늘어남 */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -89,7 +86,7 @@ h3{margin:16px 0 8px;font-size:15px;}
   display:flex;
   flex-direction:column;
   cursor:pointer;
-  min-height:320px; /* 최소 높이만 유지 */
+  min-height:320px;
 }
 
 .card img{
@@ -106,7 +103,6 @@ h3{margin:16px 0 8px;font-size:15px;}
   gap:8px;
 }
 
-/* 🔑 제목 줄수 확장 (3줄) */
 .card .title{
   font-weight:700;
   font-size:15px;
@@ -124,12 +120,7 @@ h3{margin:16px 0 8px;font-size:15px;}
   overflow:hidden;
 }
 
-.badges{
-  display:flex;
-  gap:6px;
-  flex-wrap:wrap;
-}
-
+.badges{display:flex;gap:6px;flex-wrap:wrap;}
 .badge{
   font-size:12px;
   border:1px solid var(--border);
@@ -138,7 +129,6 @@ h3{margin:16px 0 8px;font-size:15px;}
   background:#fff;
 }
 
-/* 버튼은 항상 하단으로 */
 .more-mini{
   margin-top:auto;
   border:1px solid var(--border);
@@ -176,13 +166,7 @@ h3{margin:16px 0 8px;font-size:15px;}
 }
 
 .detail-body{padding:14px;}
-
-.meta{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin:10px 0 4px;
-}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px;}
 
 .reserve{
   display:inline-block;
@@ -207,4 +191,5 @@ h3{margin:16px 0 8px;font-size:15px;}
   .grid{grid-template-columns:1fr;}
   .section-head{flex-direction:column;align-items:flex-start;}
   .detail{grid-template-columns:1fr;}
+  .logo{max-height:72px;}
 }
