@@ -172,7 +172,6 @@ function init(){
   els.backBtn.addEventListener("click", closeDetail);
   window.addEventListener("hashchange", handleHash);
 
-  // ✅ 핵심: 상대경로로 로드 ("/data/..."가 아니라 "data/...")
   fetch("data/tour.json")
     .then(res => {
       if(!res.ok) throw new Error(`HTTP ${res.status} loading data/tour.json`);
@@ -181,7 +180,8 @@ function init(){
     .then(data => {
       DATA = data;
 
-      els.subtitle.textContent = data.tourInfo?.subtitle || "";
+      // ✅ subtitle은 로고 아래로 표시
+      els.subtitle.textContent = data.tourInfo?.subtitle || "Transit Tour Guide & Course Information";
 
       els.notes.innerHTML = "";
       (data.tourInfo?.notes || []).forEach(n => {
