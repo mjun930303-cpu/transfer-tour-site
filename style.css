@@ -5,17 +5,37 @@
   --bg:#fff;
   --card:#fafafa;
 }
+
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   color:var(--text);
   background:var(--bg);
 }
+
 .container{max-width:980px;margin:0 auto;padding:16px;}
-.header{border-bottom:1px solid var(--border);padding-bottom:12px;}
-.brand{display:flex;align-items:center;gap:12px;}
-.logo{height:44px;width:auto;max-width:180px;object-fit:contain;}
+
+.header{
+  border-bottom:1px solid var(--border);
+  padding-bottom:12px;
+}
+
+/* 🔑 가로형 로고 대응 */
+.brand{
+  display:flex;
+  align-items:center;
+}
+
+.logo{
+  max-height:56px;     /* 가로 로고 기준 */
+  width:auto;
+  max-width:100%;
+  object-fit:contain;
+}
+
+/* 텍스트 */
 .muted{color:var(--muted)}
 .hidden{display:none}
 .mt-14{margin-top:14px;}
@@ -29,6 +49,7 @@ h3{margin:16px 0 8px;font-size:15px;}
   border-radius:14px;
   padding:14px;
 }
+
 .bullets{margin:8px 0 0;padding-left:18px;}
 .contact{margin-top:10px;font-size:14px;}
 
@@ -39,7 +60,9 @@ h3{margin:16px 0 8px;font-size:15px;}
   gap:12px;
   margin-top:18px;
 }
+
 .filters{display:flex;gap:10px;flex-wrap:wrap;}
+
 .chip{
   border:1px solid var(--border);
   background:#fff;
@@ -48,8 +71,10 @@ h3{margin:16px 0 8px;font-size:15px;}
   cursor:pointer;
   font-size:14px;
 }
+
 .chip.active{border-color:#111;}
 
+/* 🔑 카드 높이 고정 제거 → 내용에 맞게 늘어남 */
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -63,30 +88,34 @@ h3{margin:16px 0 8px;font-size:15px;}
   background:#fff;
   display:flex;
   flex-direction:column;
-  height:320px;
   cursor:pointer;
+  min-height:320px; /* 최소 높이만 유지 */
 }
+
 .card img{
   width:100%;
   height:160px;
   object-fit:cover;
   background:#f2f2f2;
 }
+
 .card .body{
   padding:12px;
   display:flex;
   flex-direction:column;
   gap:8px;
-  height:160px;
 }
+
+/* 🔑 제목 줄수 확장 (3줄) */
 .card .title{
   font-weight:700;
   font-size:15px;
   display:-webkit-box;
-  -webkit-line-clamp:2;
+  -webkit-line-clamp:3;
   -webkit-box-orient:vertical;
   overflow:hidden;
 }
+
 .card .sub{
   font-size:13px;
   display:-webkit-box;
@@ -95,7 +124,12 @@ h3{margin:16px 0 8px;font-size:15px;}
   overflow:hidden;
 }
 
-.badges{display:flex;gap:6px;flex-wrap:wrap;}
+.badges{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
 .badge{
   font-size:12px;
   border:1px solid var(--border);
@@ -104,6 +138,7 @@ h3{margin:16px 0 8px;font-size:15px;}
   background:#fff;
 }
 
+/* 버튼은 항상 하단으로 */
 .more-mini{
   margin-top:auto;
   border:1px solid var(--border);
@@ -132,14 +167,22 @@ h3{margin:16px 0 8px;font-size:15px;}
   display:grid;
   grid-template-columns:1fr 1.2fr;
 }
+
 .detail img{
   width:100%;
   min-height:260px;
   object-fit:cover;
   background:#f2f2f2;
 }
+
 .detail-body{padding:14px;}
-.meta{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px;}
+
+.meta{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:10px 0 4px;
+}
 
 .reserve{
   display:inline-block;
