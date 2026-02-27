@@ -1,8 +1,7 @@
 {
   "reserveLinkDefault": "https://www.airport.kr/ap_en/1472/subview.do",
   "tourInfo": {
-    "title": "Free Korea Transit Tour (Test)",
-    "subtitle": "Transfer Tour Guide & Course Information",
+    "subtitle": "Transit Tour Guide & Course Information",
     "notes": [
       "Eligibility depends on immigration/visa requirements.",
       "Tour schedules and routes may change without prior notice.",
@@ -12,7 +11,14 @@
     "contact": {
       "email": "transferinfodesk@gmail.com",
       "phone": "+82-32-741-3140 / +82-32-741-0060"
-    }
+    },
+    "termsTitle": "Terms & Conditions",
+    "terms": [
+      "Participants must meet immigration/visa requirements to enter Korea.",
+      "Please return on time. Late return may affect future participation.",
+      "Tour schedule may change due to traffic, weather, or operational conditions.",
+      "No-show policies may apply depending on capacity."
+    ]
   },
   "courses": [
     {
@@ -23,13 +29,11 @@
       "terminals": ["T1", "T2"],
       "time": "09:00–13:00",
       "duration": "4h",
-      "fee": "Free (may vary by site policy)",
       "highlights": [
         "Peace ecopark with views across the border (approx. 1.4km)",
-        "Observation deck, skywalk/bridge, nature trail",
-        "Scenic cafe/Starbucks view spot"
+        "Observation deck, bridge/skywalk, nature trail"
       ],
-      "image": "/images/aegibong.jpg",
+      "image": "images/aegibong.jpg",
       "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
     },
     {
@@ -40,29 +44,11 @@
       "terminals": ["T1", "T2"],
       "time": "14:00–18:00",
       "duration": "4h",
-      "fee": "Free",
       "highlights": [
-        "Shopping, cosmetics, street food, cafes and restaurants",
-        "Unique themed cafes (cat/dog/3D, etc.)",
-        "Indie music, art, youth culture"
+        "Shopping, street food, cafes and restaurants",
+        "Unique themed cafes, youth culture"
       ],
-      "image": "/images/hongdae.jpg",
-      "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
-    },
-    {
-      "slug": "sinpo-traditional-market",
-      "title": "Petit Shopping Delight",
-      "subtitle": "Sinpo Traditional Market",
-      "days": ["Daily"],
-      "terminals": ["T2"],
-      "time": "15:00–18:00",
-      "duration": "3h",
-      "fee": "Free",
-      "highlights": [
-        "Traditional market dating back to the late 19th century",
-        "Signature snack: Dakgangjeong (sweet & spicy crispy chicken)"
-      ],
-      "image": "/images/sinpo.jpg",
+      "image": "images/hongdae.jpg",
       "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
     },
     {
@@ -76,89 +62,9 @@
       "fee": "Admission: $4 (subject to change)",
       "highlights": [
         "3rd Tunnel: steep slope & narrow passage (requires physical activity)",
-        "Dora Observatory: views toward North Korea (e.g., Kaesong area)"
+        "Dora Observatory: views toward North Korea"
       ],
-      "image": "/images/dmz-3rd-tunnel.jpg",
-      "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
-    },
-    {
-      "slug": "odusan-imjingak-peace",
-      "title": "Embracing Peace on Divided Land",
-      "subtitle": "Odusan Observatory → Imjingak",
-      "days": ["Wed", "Fri"],
-      "terminals": ["T1", "T2"],
-      "time": "09:00–14:00",
-      "duration": "5h",
-      "fee": "Free (may vary by site policy)",
-      "highlights": [
-        "Odusan Unification Observatory",
-        "Imjingak Peace Park"
-      ],
-      "image": "/images/odusan-imjingak.jpg",
-      "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
-    },
-    {
-      "slug": "gyeongbokgung-insadong-royal",
-      "title": "Royal Heritage and Charm",
-      "subtitle": "Gyeongbokgung → Insadong",
-      "days": ["Daily"],
-      "terminals": ["T1", "T2"],
-      "time": "09:00–14:00",
-      "duration": "5h",
-      "fee": "Admission: $3 (subject to change)",
-      "highlights": [
-        "Gyeongbokgung Palace",
-        "Insadong (traditional street, crafts, shopping)"
-      ],
-      "image": "/images/gyeongbokgung-insadong.jpg",
-      "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
-    },
-    {
-      "slug": "incheon-easy-outing",
-      "title": "Easy Outing in Incheon",
-      "subtitle": "Moraenae & Guwol Market → Sorae Port",
-      "days": ["Mon", "Tue"],
-      "terminals": ["T1", "T2"],
-      "time": "10:00–15:00",
-      "duration": "5h",
-      "fee": "Free",
-      "highlights": [
-        "Traditional markets & street food",
-        "Sorae Port (seafood area and local attractions)"
-      ],
-      "image": "/images/incheon-markets-sorae.jpg",
-      "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
-    },
-    {
-      "slug": "seagulls-wolmi",
-      "title": "Fun with the Seagulls",
-      "subtitle": "Gueup Ferry Terminal → Wolmi Park",
-      "days": ["Tue", "Sat", "Sun"],
-      "terminals": ["T1", "T2"],
-      "time": "09:00–13:00",
-      "duration": "4h",
-      "fee": "Free (ferry/optional costs may apply)",
-      "highlights": [
-        "Ferry area experience (feeding seagulls)",
-        "Wolmi Park"
-      ],
-      "image": "/images/seagulls-wolmi.jpg",
-      "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
-    },
-    {
-      "slug": "seaside-slurp-chill",
-      "title": "Seaside Slurp & Chill",
-      "subtitle": "Wangsan Marina – Ramen Library CU",
-      "days": ["Wed", "Thu", "Fri"],
-      "terminals": ["T1"],
-      "time": "15:00–18:00",
-      "duration": "3h",
-      "fee": "Free (food purchase optional)",
-      "highlights": [
-        "Pick & cook ramen with self-cooking stations",
-        "Sea-view terrace vibe near the marina"
-      ],
-      "image": "/images/wangsan-ramen.jpg",
+      "image": "images/dmz-3rd-tunnel.jpg",
       "reserveLink": "https://www.airport.kr/ap_en/1472/subview.do"
     }
   ]
